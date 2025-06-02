@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Division Result</title>
+</head>
+<body>
+  <h2>Division Result Checker</h2>
+
+  <label for="numerator">Enter Numerator:</label>
+  <input type="number" id="numerator"><br><br>
+
+  <label for="denominator">Enter Denominator:</label>
+  <input type="number" id="denominator"><br><br>
+
+  <button onclick="showResult()">Divide</button>
+
+  <p id="result"></p>
+
+  <script>
+    function divide(numerator, denominator) {
+      if (denominator === 0) {
+        return "Cannot divide by zero.";
+      } else if (denominator > numerator) {
+        return "Cannot be divided because the denominator is greater than the numerator.";
+      } else {
+        let quotient = parseInt(numerator / denominator); // Get integer part
+        let remainder = numerator % denominator;
+
+        if (remainder === 0) {
+          return `Your result is ${quotient}. There is no remainder.`;
+        } else {
+          return `Your dividend is ${quotient} and the remainder is ${remainder}.`;
+        }
+      }
+    }
+
+    function showResult() {
+      let num = parseInt(document.getElementById("numerator").value);
+      let den = parseInt(document.getElementById("denominator").value);
+
+      let resultText = divide(num, den);
+      document.getElementById("result").textContent = resultText;
+    }
+  </script>
+</body>
+</html>

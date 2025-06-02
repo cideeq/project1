@@ -44,8 +44,9 @@
     background-color:white;
     margin-bottom:20px;
     border-radius:20px;
-    height: 50px;
+    height: 100px;
     padding:15;
+    text-indent: 50px;
     box-shadow:0 0 15px rgba(0,0,0,0.2)}
 
     .about{
